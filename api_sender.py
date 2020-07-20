@@ -80,15 +80,15 @@ def addCurriculo():
       raise  InvalidUsage('o campo end_date na aba degrees só aceita (Unix epoch) faça a conversão e tente novamente')   
 
     programming_skills = list(payload['programming_skills'])
-    if len(programming_skills) == 0:
+    if len(programming_skills) == 0 or  type(programming_skills) != 'list':
       raise  InvalidUsage('o campo programming_skills não pode ficar vazio e somente aceita arrays.', status_code=400)
 
     database_skills = list(payload['database_skills'])
-    if len(database_skills) == 0:
+    if len(database_skills) == 0 or  type(database_skills) != 'list':
       raise  InvalidUsage('o campo database_skills não pode ficar vazio e somente aceita arrays.', status_code=400)
 
     hobbies = list(payload['hobbies'])
-    if len(hobbies) == 0:
+    if len(hobbies) == 0 or  type(hobbies) != 'list':
       raise  InvalidUsage('o campo hobbies não pode ficar vazio e somente aceita arrays.', status_code=400)
 
   
